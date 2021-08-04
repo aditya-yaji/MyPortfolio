@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve("index.html"));
+  res.sendFile(path.resolve("public/index.html"));
 });
 
 app.post("/sign", (req, res) => {
@@ -25,9 +25,9 @@ app.post("/sign", (req, res) => {
       options,
       (response) => {
         if (response.statusCode === 200) {
-          res.sendFile(path.resolve("success.html"));
+          res.sendFile(path.resolve("public/success.html"));
         } else {
-          res.sendFile(path.resolve("failure.html"));
+          res.sendFile(path.resolve("public/failure.html"));
         }
 
         response.on("data", (data) => {
