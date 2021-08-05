@@ -25,9 +25,9 @@ app.post("/sign", (req, res) => {
       options,
       (response) => {
         if (response.statusCode === 200) {
-          res.sendFile(path.resolve("public/failure.html"));
-        } else {
           res.sendFile(path.resolve("public/success.html"));
+        } else {
+          res.sendFile(path.resolve("public/failure.html"));
         }
 
         response.on("data", (data) => {
